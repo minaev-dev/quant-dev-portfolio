@@ -1,15 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = np.random.normal(0, 1, 1000000)
-mean_data = np.mean(data)
-Ns = np.array([10, 100, 1000, 10000, 100000])
-means = []
+np.random.seed(42)
 
-for N in Ns:
-    data = np.random.normal(0, 1, N)
-    mean_val = np.mean(data)
-    means.append(mean_val)
+def simulate_convergence(Ns, mu=0, sigma=1):
+    means = []
+    for N in Ns:
+        data = np.random.normal(mu, sigma, N)
+        means.append(np.mean(data))
+    return means
+
+Ns = [10, 100, 1000, 10000, 100000]
+means = simulate_convergence(Ns)
 
 plt.figure(figsize=(10, 6)) 
 plt.plot(Ns, means, marker='o', label='Среднее' ) 
