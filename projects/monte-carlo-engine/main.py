@@ -11,14 +11,14 @@ for N in Ns:
     mean_val = np.mean(data)
     means.append(mean_val)
 
-plt.figure(figsize=(10, 6)) #1
-plt.plot(Ns, means, marker='o', label='Среднее' ) #2
-plt.axhline(0, color='red', linestyle='--', label='Теоретическое среднее (0)') #3
-plt.xscale('log') #4
-plt.xlabel('Размер выборки (N)') #5
-plt.ylabel('Среднее значение') #5
-plt.title('Сходимость среднего к 0 (LLM)') # 6
-plt.grid(True, alpha=0.3) # 7
-plt.legend() # 8
-plt.savefig('projects/monte-carlo-engine/results/convergence.png') # 9
-plt.show() # 10
+plt.figure(figsize=(10, 6)) 
+plt.plot(Ns, means, marker='o', label='Среднее') 
+plt.axhline(0, color='red', linestyle='--', label='Теоретическое среднее (0)') 
+plt.xscale('log') 
+plt.xlabel('Размер выборки (N)') 
+plt.ylabel('Среднее значение') 
+plt.title('Сходимость среднего к 0 (LLM)') 
+plt.grid(True, alpha=0.3) 
+plt.legend()
+plt.savefig('projects/monte-carlo-engine/results/convergence.png')
+plt.show()
